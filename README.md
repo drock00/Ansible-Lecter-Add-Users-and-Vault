@@ -18,4 +18,4 @@ $ ansible-playbook ansible22.example.com -m shell -a "cat /etc/passwd | grep whe
 
 ### Tech and Running the file
 
-Bin, Bash, Boom. You should probably be setting up a lab of virtual hosts to try out your plays. You will have to adjust the inventory file accordingly and of course your /etc/hosts or whatever DNS resolution you are using. 
+Bin, Bash, Boom. You will have to adjust the inventory file accordingly and of course your /etc/hosts or whatever DNS resolution you are using. 

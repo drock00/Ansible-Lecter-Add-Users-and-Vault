@@ -7,7 +7,7 @@ Add users and groups to managed nodes using loop construct in a variable file. P
 
 # Example Run 1
 ```sh
-$ ansible-playbook add_users.yml 
+$ ansible-playbook add_users.yml --ask-vault-pass
 ```
 
 # Validate using adhoc

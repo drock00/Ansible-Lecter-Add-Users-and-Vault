@@ -1,0 +1,9 @@
+users:
+- name: adam
+  group: wheel
+- name: bob
+  group: wheel
+- name: chris
+  group: wheel
+- name: dave
+  group: wheel 

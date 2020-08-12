@@ -1,0 +1,23 @@
+---
+- name: add users using variables and loop
+  hosts: region
+  vars_files:
+    - vault/sec.yml
+    - vars/users.yml
+  tasks:
+    - name: add users
+      user:
+        name: "{{item.name}}"
+        groups: "{{item.group}}"
+      loop: "{{users}}"
+    - name: set all the users' passwords
+      shell: echo {{pass}} | passwd --stdin {{item.name}}
+      loop: "{{users}}"
+      when: ansible_distribution == "RedHat"
+    - name: verify all the users are in group wheel
+      shell: id {{item.name}}
+      loop: "{{users}}"
+      register: result
+      failed_when: item.name not in result.stdout
+      changed_when: false
+   
